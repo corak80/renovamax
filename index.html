@@ -585,6 +585,7 @@ a.c-card:hover .c-val{color:var(--brass-lt);}
 
     <form class="qform rv" id="quoteForm">
       <div class="qform-head" data-i18n="fHead">Eller skicka en förfrågan direkt</div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;">
       <div class="qgrid">
         <div class="qfield">
           <label for="qname" data-i18n="fName">Namn</label>
@@ -612,7 +613,7 @@ a.c-card:hover .c-val{color:var(--brass-lt);}
       <button class="btn btn-fill" type="submit"><span data-i18n="fSend">Skicka förfrågan</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
       </button>
-      <p class="qnote" data-i18n="fNote">Öppnar WhatsApp med texten färdig — du skickar sista steget.</p>
+      <p class="qnote" data-i18n="fNote">Skickas direkt till oss — vi återkommer snabbt.</p>
     </form>
 
     <div class="contact-foot">
@@ -658,7 +659,7 @@ const DICT={
   coSms:"Lähetä tarjouspyyntö →",coEmailL:"Sähköposti",
   fHead:"Tai lähetä pyyntö suoraan",fName:"Nimi",fPhone:"Puhelin",fService:"Palvelu",fOther:"Muu",
   fMsg:"Viesti",fMsgPh:"Kerro lyhyesti projektistasi…",fSend:"Lähetä pyyntö",
-  fNote:"Avaa WhatsAppin valmiilla tekstillä — sinä lähetät viimeisen vaiheen.",
+  fNote:"Lähetetään suoraan meille — palaamme asiaan pian.",
   ftRights:"Rakennus &amp; remontointi · Vaasa"
  },
  en:{
@@ -693,7 +694,7 @@ const DICT={
   coSms:"Send a request →",coEmailL:"Email",
   fHead:"Or send a request directly",fName:"Name",fPhone:"Phone",fService:"Service",fOther:"Other",
   fMsg:"Message",fMsgPh:"Tell us briefly about your project…",fSend:"Send request",
-  fNote:"Opens WhatsApp with the text ready — you send the final step.",
+  fNote:"Sent straight to us — we'll get back to you shortly.",
   ftRights:"Construction &amp; renovation · Vaasa"
  }
 };
@@ -766,15 +767,40 @@ items.forEach(it=>{
 /* year */
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-/* quote form → compose WhatsApp message */
-document.getElementById('quoteForm').addEventListener('submit',e=>{
+/* quote form → POST to lead endpoint (emails Maxim) */
+const LEAD_URL='https://dashboard.saarivet.fi/tv/api/renovamax-lead';
+const FORM_MSG={
+  sv:{sending:"Skickar…",ok:"Tack! Din förfrågan är skickad — vi återkommer snabbt.",err:"Något gick fel. Ring oss på 046 811 0888 eller mejla maximtim@hotmail.com."},
+  fi:{sending:"Lähetetään…",ok:"Kiitos! Pyyntösi on lähetetty — palaamme asiaan pian.",err:"Jokin meni vikaan. Soita 046 811 0888 tai lähetä sähköpostia maximtim@hotmail.com."},
+  en:{sending:"Sending…",ok:"Thank you! Your request has been sent — we'll get back to you shortly.",err:"Something went wrong. Call us at 046 811 0888 or email maximtim@hotmail.com."}};
+let leadBusy=false;
+document.getElementById('quoteForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  const f=e.target;const lang=document.documentElement.lang||'sv';
-  const L={sv:{i:"Förfrågan via renovamax.fi",s:"Tjänst",m:"Meddelande",from:"Från"},
-           fi:{i:"Tarjouspyyntö renovamax.fi:stä",s:"Palvelu",m:"Viesti",from:"Lähettäjä"},
-           en:{i:"Request via renovamax.fi",s:"Service",m:"Message",from:"From"}}[lang]||{i:"Förfrågan",s:"Tjänst",m:"Meddelande",from:"Från"};
-  const body=`${L.i}\n${L.from}: ${f.name.value} (${f.phone.value})\n${L.s}: ${f.service.value}\n${L.m}: ${f.msg.value}`;
-  window.open(`https://wa.me/358468110888?text=${encodeURIComponent(body)}`,'_blank','noopener');
+  if(leadBusy) return;                       // client double-submit lock
+  try{ const last=+localStorage.getItem('rmx-lead-ts')||0;
+       if(Date.now()-last<60000){return;} }catch(_){}
+  const f=e.target;
+  const lang=document.documentElement.lang||'sv';
+  const M=FORM_MSG[lang]||FORM_MSG.sv;
+  const btn=f.querySelector('button[type=submit]');
+  const btnLabel=btn.querySelector('span');
+  const origLabel=btnLabel.textContent;
+  leadBusy=true;btn.disabled=true;btn.style.opacity='.6';btnLabel.textContent=M.sending;
+  try{
+    const r=await fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:f.name.value,phone:f.phone.value,service:f.service.value,
+                           msg:f.msg.value,lang,website:f.website.value})});
+    if(!r.ok) throw new Error('http '+r.status);
+    try{localStorage.setItem('rmx-lead-ts',String(Date.now()));}catch(_){}
+    f.innerHTML='<p style="text-align:center;font-size:18px;font-weight:600;padding:20px 0;color:var(--brass-lt);" role="status">'+M.ok+'</p>';
+  }catch(err){
+    leadBusy=false;btn.disabled=false;btn.style.opacity='';btnLabel.textContent=origLabel;
+    let el=document.getElementById('leadErr');
+    if(!el){el=document.createElement('p');el.id='leadErr';el.setAttribute('role','alert');
+      el.style.cssText='color:#E8A0A0;font-size:14px;text-align:center;margin-top:12px;';
+      f.appendChild(el);}
+    el.textContent=M.err;
+  }
 });
 
 /* init */
