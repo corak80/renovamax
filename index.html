@@ -578,7 +578,7 @@ a.c-card:hover .c-val{color:var(--brass-lt);}
       <a class="tel-hero rv d2" href="tel:+358468110888" aria-label="Ring RenovaMax 046 811 0888">046 811 0888</a>
     </div>
     <div class="contact-cards rv d2">
-      <a class="c-card" href="sms:+358468110888"><span class="mono">SMS / WhatsApp</span><span class="c-val" data-i18n="coSms">Skicka en förfrågan →</span></a>
+      <a class="c-card" href="https://wa.me/358468110888" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><span class="c-val" data-i18n="coSms">Skicka en förfrågan →</span></a>
       <a class="c-card" href="mailto:maximtim@hotmail.com"><span class="mono" data-i18n="coEmailL">E-post</span><span class="c-val">maximtim@hotmail.com</span></a>
       <a class="c-card" href="https://instagram.com/renovamax_" target="_blank" rel="noopener"><span class="mono">Instagram</span><span class="c-val">@renovamax_</span></a>
     </div>
@@ -612,7 +612,7 @@ a.c-card:hover .c-val{color:var(--brass-lt);}
       <button class="btn btn-fill" type="submit"><span data-i18n="fSend">Skicka förfrågan</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
       </button>
-      <p class="qnote" data-i18n="fNote">Öppnar din meddelande-app med texten färdig — du skickar sista steget.</p>
+      <p class="qnote" data-i18n="fNote">Öppnar WhatsApp med texten färdig — du skickar sista steget.</p>
     </form>
 
     <div class="contact-foot">
@@ -658,7 +658,7 @@ const DICT={
   coSms:"Lähetä tarjouspyyntö →",coEmailL:"Sähköposti",
   fHead:"Tai lähetä pyyntö suoraan",fName:"Nimi",fPhone:"Puhelin",fService:"Palvelu",fOther:"Muu",
   fMsg:"Viesti",fMsgPh:"Kerro lyhyesti projektistasi…",fSend:"Lähetä pyyntö",
-  fNote:"Avaa viestisovelluksesi valmiilla tekstillä — sinä lähetät viimeisen vaiheen.",
+  fNote:"Avaa WhatsAppin valmiilla tekstillä — sinä lähetät viimeisen vaiheen.",
   ftRights:"Rakennus &amp; remontointi · Vaasa"
  },
  en:{
@@ -693,7 +693,7 @@ const DICT={
   coSms:"Send a request →",coEmailL:"Email",
   fHead:"Or send a request directly",fName:"Name",fPhone:"Phone",fService:"Service",fOther:"Other",
   fMsg:"Message",fMsgPh:"Tell us briefly about your project…",fSend:"Send request",
-  fNote:"Opens your messaging app with the text ready — you send the final step.",
+  fNote:"Opens WhatsApp with the text ready — you send the final step.",
   ftRights:"Construction &amp; renovation · Vaasa"
  }
 };
@@ -766,15 +766,15 @@ items.forEach(it=>{
 /* year */
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-/* quote form → compose SMS */
+/* quote form → compose WhatsApp message */
 document.getElementById('quoteForm').addEventListener('submit',e=>{
   e.preventDefault();
   const f=e.target;const lang=document.documentElement.lang||'sv';
-  const L={sv:{i:"Förfrågan via webben",s:"Tjänst",m:"Meddelande",from:"Från"},
-           fi:{i:"Tarjouspyyntö verkosta",s:"Palvelu",m:"Viesti",from:"Lähettäjä"},
-           en:{i:"Website request",s:"Service",m:"Message",from:"From"}}[lang]||{i:"Förfrågan",s:"Tjänst",m:"Meddelande",from:"Från"};
-  const body=`${L.i} — RenovaMax%0a${L.from}: ${f.name.value} (${f.phone.value})%0a${L.s}: ${f.service.value}%0a${L.m}: ${f.msg.value}`;
-  window.location.href=`sms:+358468110888?&body=${body}`;
+  const L={sv:{i:"Förfrågan via renovamax.fi",s:"Tjänst",m:"Meddelande",from:"Från"},
+           fi:{i:"Tarjouspyyntö renovamax.fi:stä",s:"Palvelu",m:"Viesti",from:"Lähettäjä"},
+           en:{i:"Request via renovamax.fi",s:"Service",m:"Message",from:"From"}}[lang]||{i:"Förfrågan",s:"Tjänst",m:"Meddelande",from:"Från"};
+  const body=`${L.i}\n${L.from}: ${f.name.value} (${f.phone.value})\n${L.s}: ${f.service.value}\n${L.m}: ${f.msg.value}`;
+  window.open(`https://wa.me/358468110888?text=${encodeURIComponent(body)}`,'_blank','noopener');
 });
 
 /* init */
