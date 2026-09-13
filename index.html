@@ -587,7 +587,11 @@ a.c-card:hover .c-val{color:var(--brass-lt);}
 
     <form class="qform rv" id="quoteForm">
       <div class="qform-head" data-i18n="fHead">Eller skicka en förfrågan direkt</div>
-      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;">
+      <!-- Spam trap. Name is deliberately meaningless: a field called "website" got
+           autofilled by real visitors' browsers and their leads were discarded. -->
+      <div style="display:none;" aria-hidden="true">
+        <label>Ref <input type="text" name="rmx_ref" tabindex="-1" autocomplete="off"></label>
+      </div>
       <div class="qgrid">
         <div class="qfield">
           <label for="qname" data-i18n="fName">Namn</label>
@@ -791,7 +795,7 @@ document.getElementById('quoteForm').addEventListener('submit',async e=>{
   try{
     const r=await fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name:f.name.value,phone:f.phone.value,service:f.service.value,
-                           msg:f.msg.value,lang,website:f.website.value})});
+                           msg:f.msg.value,lang,rmx_ref:f.rmx_ref.value})});
     if(!r.ok) throw new Error('http '+r.status);
     try{localStorage.setItem('rmx-lead-ts',String(Date.now()));}catch(_){}
     f.innerHTML='<p style="text-align:center;font-size:18px;font-weight:600;padding:20px 0;color:var(--brass-lt);" role="status">'+M.ok+'</p>';
