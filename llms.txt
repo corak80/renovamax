@@ -8,7 +8,9 @@
 
 ## Pages
 
-- [Homepage (Swedish, with Finnish and English versions)](https://renovamax.fi/): services, process, contact and quote form
+- [Homepage in Swedish](https://renovamax.fi/): services, process, contact and quote form
+- [Homepage in Finnish](https://renovamax.fi/fi/): the same in Finnish
+- [Homepage in English](https://renovamax.fi/en/): the same in English
 
 ## Guides in Swedish
 
