@@ -1,0 +1,27 @@
+# RenovaMax
+
+> Renovation and building contractor in Vaasa (Vasa), Finland, run by Maxim Timoshenko. Full renovations, kitchens and bathrooms, stretch ceilings (spänntak / stretch-katto, kalvokatto), terraces and piers in Vaasa and the wider Ostrobothnia (Österbotten / Pohjanmaa) region. Swedish, Finnish and English.
+
+- Business ID (Y-tunnus / FO-nummer): 3540458-2, registered in the Finnish prepayment register (ennakkoperintärekisteri / förskottsuppbördsregistret)
+- Address: Stationsgatan 17 A2 (Asemakatu 17 A2), 65100 Vaasa, Finland
+- Phone: +358 46 811 0888 · Email: maximtim@hotmail.com · Hours: Mon–Fri 07–17
+
+## Pages
+
+- [Homepage (Swedish, with Finnish and English versions)](https://renovamax.fi/): services, process, contact and quote form
+
+## Guides in Swedish
+
+- [Hushållsavdrag 2026: så mycket får du tillbaka för renovering](https://renovamax.fi/artiklar/hushallsavdrag-renovering/): Hushållsavdrag 2026: riksdagen har godkänt 40 % av arbetets andel, högst 2 100 € per person. Räkneexempel för ett badrum i Vasa och vad du ska kontrollera.
+- [Badrumsrenovering i Vasa: pris, tidsåtgång och arbetsgång](https://renovamax.fi/artiklar/badrumsrenovering-vasa/): Vad kostar en badrumsrenovering i Vasa och hur lång tid tar den? Jämför priser från tre källor och läs reglerna för tätskikt, husbolag och hushållsavdrag.
+- [Köksrenovering i Vasa – pris, planering och regler](https://renovamax.fi/artiklar/koksrenovering-vasa/): Vad kostar en köksrenovering i Vasa? Prisnivåer, planering, köksfläkt, regler i husbolag och hushållsavdrag 2026 – läs innan du begär offert.
+- [Spänntak i Vasa – montering, badrum, belysning och pris](https://renovamax.fi/artiklar/spanntak-vasa/): Spänntak i Vasa: så monteras taket på under en dag, varför det passar i badrum men inte i bastu och vad priset beror på. Läs innan du begär offert.
+- [Behövs bygglov för terrass eller brygga i Vasa?](https://renovamax.fi/artiklar/bygga-terrass-brygga-vasa/): Behövs bygglov för terrass eller brygga i Vasa? Se vad bygglagen och Vasas nya byggnadsordning från 8.5.2026 säger om avstånd, inglasning och bryggor.
+
+## Guides in Finnish
+
+- [Kotitalousvähennys 2026 remontista: paljonko saat ja miten haet](https://renovamax.fi/fi/artikkelit/kotitalousvahennys-remontti/): Kotitalousvähennys 2026 nousee eduskunnan päätöksellä 40 %:iin, enintään 2 100 euroon. Vaasalaisen remontoijan opas: kelpaavat työt, haku ja laskuesimerkki.
+- [Kylpyhuoneremontti Vaasassa: hinta, kesto ja työvaiheet](https://renovamax.fi/fi/artikkelit/kylpyhuoneremontti-vaasa/): Suunnitteletko kylpyhuoneremonttia Vaasassa? Hinnat ja neliöhinnat lähteineen, kesto, työvaiheet ja vedeneristys. Katso, mitä kannattaa tarkistaa ensin.
+- [Keittiöremontti Vaasassa – hinta, suunnittelu ja taloyhtiön säännöt](https://renovamax.fi/fi/artikkelit/keittioremontti-vaasa/): Paljonko keittiöremontti maksaa ja mitä taloyhtiö vaatii? Hinnat lähteineen, liesikupu, sähkötyöt ja kotitalousvähennys – lue ennen kuin remontoit Vaasassa.
+- [Stretch-katto Vaasassa – näin se asennetaan ja mistä hinta muodostuu](https://renovamax.fi/fi/artikkelit/stretch-katto-vaasa/): Stretch-katto Vaasassa: miten katto asennetaan, sopiiko se kylpyhuoneeseen tai saunaan ja mistä hinta muodostuu. Lue tämä ennen kuin pyydät tarjouksia.
+- [Terassin rakentaminen Vaasassa – tarvitaanko lupa terassille tai laiturille?](https://renovamax.fi/fi/artikkelit/terassi-laituri-vaasa/): Terassin rakentaminen Vaasassa: milloin tarvitaan rakentamislupa? Katso uuden rakennusjärjestyksen (8.5.2026) rajat terassille, lasitukselle ja laiturille.
