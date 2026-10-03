@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://renovamax.fi/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/"/>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://renovamax.fi/fi/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/"/>
@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://renovamax.fi/en/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://renovamax.fi/artiklar/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://renovamax.fi/fi/artikkelit/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/"/>
@@ -63,6 +63,22 @@
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/hushallsavdrag-renovering/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/kotitalousvahennys-remontti/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/hushallsavdrag-renovering/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/artiklar/helrenovering-egnahemshus-vasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/helrenovering-egnahemshus-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/omakotitalon-remontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/helrenovering-egnahemshus-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/fi/artikkelit/omakotitalon-remontti-vaasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/helrenovering-egnahemshus-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/omakotitalon-remontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/helrenovering-egnahemshus-vasa/"/>
   </url>
   <url>
     <loc>https://renovamax.fi/artiklar/badrumsrenovering-vasa/</loc>
@@ -97,6 +113,38 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/koksrenovering-vasa/"/>
   </url>
   <url>
+    <loc>https://renovamax.fi/artiklar/renovera-bastu-vasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/renovera-bastu-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/saunaremontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/renovera-bastu-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/fi/artikkelit/saunaremontti-vaasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/renovera-bastu-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/saunaremontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/renovera-bastu-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/artiklar/byta-golv-vasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/byta-golv-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/lattiaremontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/byta-golv-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/fi/artikkelit/lattiaremontti-vaasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/byta-golv-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/lattiaremontti-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/byta-golv-vasa/"/>
+  </url>
+  <url>
     <loc>https://renovamax.fi/artiklar/spanntak-vasa/</loc>
     <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
@@ -127,5 +175,21 @@
     <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/bygga-terrass-brygga-vasa/"/>
     <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/terassi-laituri-vaasa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/bygga-terrass-brygga-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/artiklar/bygga-brygga-vasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/bygga-brygga-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/laiturin-rakentaminen-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/bygga-brygga-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/fi/artikkelit/laiturin-rakentaminen-vaasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/bygga-brygga-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/laiturin-rakentaminen-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/bygga-brygga-vasa/"/>
   </url>
 </urlset>
