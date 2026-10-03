@@ -97,6 +97,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/anmalan-om-andringsarbete-husbolag/"/>
   </url>
   <url>
+    <loc>https://renovamax.fi/artiklar/fuktskada-vasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/fuktskada-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/kosteusvaurio-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/fuktskada-vasa/"/>
+  </url>
+  <url>
+    <loc>https://renovamax.fi/fi/artikkelit/kosteusvaurio-vaasa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv-FI" href="https://renovamax.fi/artiklar/fuktskada-vasa/"/>
+    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://renovamax.fi/fi/artikkelit/kosteusvaurio-vaasa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://renovamax.fi/artiklar/fuktskada-vasa/"/>
+  </url>
+  <url>
     <loc>https://renovamax.fi/artiklar/badrumsrenovering-vasa/</loc>
     <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
