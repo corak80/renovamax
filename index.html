@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fraunces-italic-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="/photos/house_web.jpg?v=0943980f" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" imagesrcset="/photos/house-480.webp?v=0955ff0d 480w, /photos/house-800.webp?v=1edf6632 800w, /photos/house-1000.webp?v=e3724ce7 1000w" imagesizes="(max-width: 880px) calc(100vw - 40px), min(42vw, 560px)" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RenovaMax">
 <meta property="og:locale" content="sv_FI">
@@ -111,6 +111,7 @@ body{background:var(--bone);color:var(--ink);font-family:var(--disp);
   font-size:16.5px;line-height:1.62;font-variation-settings:'wdth' 100;
   -webkit-font-smoothing:antialiased;overflow-x:clip;}
 img{max-width:100%;height:auto;display:block;}
+picture{display:contents;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;background:none;border:0;color:inherit;}
 ::selection{background:var(--brass-lt);color:var(--ink);}
@@ -202,18 +203,19 @@ nav{position:sticky;top:0;z-index:100;background:rgba(244,241,234,.92);
 .hero-annot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 14px;padding-block:10px clamp(18px,2.5vh,36px);}
 .hero-annot .mono{color:var(--ink-soft);}
 .hero-annot .mono b{color:var(--brass-dk);font-weight:500;}
+.hero-annot h1{font-weight:400;line-height:inherit;}
 /* Capped so sub-text, both buttons and the photo stay on a 1440×900 first screen */
-.hero h1{font-family:var(--disp);font-weight:900;font-variation-settings:'wdth' 74;
+.hero .hero-title{font-family:var(--disp);font-weight:900;font-variation-settings:'wdth' 74;
   text-transform:uppercase;line-height:.93;letter-spacing:-.02em;
   font-size:clamp(50px, min(9.4vw, 13vh), 116px);}
 /* the clip box is padded upward so the dots on Ö/Ä are never cut off */
-.hero h1 .row{display:block;overflow:hidden;padding-top:.16em;margin-top:-.16em;padding-bottom:.04em;margin-bottom:-.04em;}
-.hero h1 .row>span{display:block;transform:translateY(115%);animation:riseUp 650ms var(--ease-out) forwards;}
-.hero h1 .row:nth-child(2)>span{animation-delay:60ms;}
-.hero h1 .row:nth-child(3)>span{animation-delay:120ms;}
+.hero .hero-title .row{display:block;overflow:hidden;padding-top:.16em;margin-top:-.16em;padding-bottom:.04em;margin-bottom:-.04em;}
+.hero .hero-title .row>span{display:block;transform:translateY(115%);animation:riseUp 650ms var(--ease-out) forwards;}
+.hero .hero-title .row:nth-child(2)>span{animation-delay:60ms;}
+.hero .hero-title .row:nth-child(3)>span{animation-delay:120ms;}
 @keyframes riseUp{to{transform:none;}}
-.hero h1 .ghost{color:transparent;-webkit-text-stroke:2px var(--ink);}
-.hero h1 .hem{font-family:var(--serif);font-style:italic;font-weight:430;text-transform:none;
+.hero .hero-title .ghost{color:transparent;-webkit-text-stroke:2px var(--ink);}
+.hero .hero-title .hem{font-family:var(--serif);font-style:italic;font-weight:430;text-transform:none;
   letter-spacing:-.01em;color:var(--brass);font-size:.94em;}
 .hero-band{display:grid;grid-template-columns:minmax(300px,1.1fr) minmax(260px,.9fr);
   gap:clamp(28px,4vw,72px);align-items:end;margin-top:clamp(20px,3vh,44px);
@@ -283,6 +285,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(244,241,234,.92);
 .gd-list .gd-langs a:hover{background:var(--ink);color:var(--bone);}
 .gd-all{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
 .gd-all a{color:var(--brass-dk);}
+.svc-gd{margin-top:clamp(24px,3.5vh,40px);padding-top:18px;border-top:1px solid var(--hair);max-width:90ch;font-size:15.5px;line-height:1.7;color:var(--ink-soft);}
+.svc-gd a{color:var(--brass-dk);font-weight:600;white-space:nowrap;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+.svc-gd a:hover{color:var(--ink);}
+@media(max-width:640px){.svc-gd{line-height:1.95;}}
 @media (max-width:700px){.gd-en{grid-template-columns:40px 1fr;padding-left:4px;padding-right:4px;}.gd-langs{grid-column:2;}.gd-list a{grid-template-columns:40px 1fr auto;padding-left:4px;padding-right:4px;}}
 .svc-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,4vw,72px);align-items:start;}
 .svc-list{border-top:1px solid var(--hair-strong);}
@@ -506,7 +512,7 @@ html.js .rv.in{opacity:1;transform:none;}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
-  .hero h1 .row>span{transform:none;animation:none;}
+  .hero .hero-title .row>span{transform:none;animation:none;}
   html.js .rv{opacity:1;transform:none;transition:none;}
   .marquee-track{animation:none;}
   .mnav,.mnav.open{transform:none;}
@@ -599,11 +605,11 @@ html.js .rv.in{opacity:1;transform:none;}
 <header class="hero wrap" id="top">
   <div class="hero-frame">
     <div class="hero-annot">
-      <span class="mono"><b data-i18n="anPlace">Vasa · Österbotten</b></span>
+      <h1 class="mono"><b data-i18n="heroH1">Renovering i Vasa · Österbotten</b></h1>
       <span class="mono" data-i18n="tlHours">Mån–Fre 07–17</span>
       <span class="mono" data-i18n="anDirect">Direkt med hantverkaren</span>
     </div>
-    <h1 data-i18n="heroTitle"><span class="row"><span>Dags att</span></span><span class="row"><span class="ghost">förnya</span></span><span class="row"><span>ditt <span class="hem">hem?</span></span></span></h1>
+    <p class="hero-title" data-i18n="heroTitle"><span class="row"><span>Dags att</span></span> <span class="row"><span class="ghost">förnya</span></span> <span class="row"><span>ditt <span class="hem">hem?</span></span></span></p>
     <div class="hero-band">
       <div>
         <p class="hero-sub" data-i18n="heroSub">Vi renoverar hem i Vasa och Österbotten, <b>från golv till tak.</b> Kök, badrum, spänntak, terrasser och bryggor, byggda för att hålla vid kusten.</p>
@@ -618,7 +624,7 @@ html.js .rv.in{opacity:1;transform:none;}
         </div>
       </div>
       <figure class="hero-photo">
-        <img src="/photos/house_web.jpg?v=0943980f" alt="Helrenoverad stuga i Vasa – fasad och trädäck" width="1000" height="1000" fetchpriority="high">
+        <picture><source type="image/webp" srcset="/photos/house-480.webp?v=0955ff0d 480w, /photos/house-800.webp?v=1edf6632 800w, /photos/house-1000.webp?v=e3724ce7 1000w" sizes="(max-width: 880px) calc(100vw - 40px), min(42vw, 560px)"><img src="/photos/house_web.jpg?v=0943980f" alt="Helrenoverad stuga i Vasa – fasad och trädäck" width="1000" height="1000" fetchpriority="high"></picture>
         <figcaption><b data-i18n="heroCapA">Helrenovering</b><span data-i18n="heroCapB">Stuga · Vasa</span></figcaption>
       </figure>
     </div>
@@ -632,7 +638,7 @@ html.js .rv.in{opacity:1;transform:none;}
 <section id="tjanster" class="sec wrap" aria-labelledby="h-tjanster">
   <div class="sec-head">
     <span class="sec-no" data-i18n="svcNo">Vad vi gör</span>
-    <h2 id="h-tjanster" class="rv" data-i18n="svcTitle">Hantverk som <span class="em-serif">håller</span></h2>
+    <h2 id="h-tjanster" class="rv" data-i18n="svcTitle">Renovering som <span class="em-serif">håller</span></h2>
   </div>
   <p class="svc-intro rv" data-i18n="svcIntro">Fyra saker vi gör i hem i Vasa och runt om i Österbotten. Välj en tjänst och begär offert.</p>
   <div class="svc-wrap">
@@ -667,11 +673,12 @@ html.js .rv.in{opacity:1;transform:none;}
           <span class="pd" id="svc-pd">Hela hem förvandlade från golv till tak, med ytor som håller i åratal.</span>
           <span class="pc mono"><span data-i18n="navCta">Begär offert</span> · 046 811 0888</span>
         </div>
-        <img class="layer" data-layer="terrace" src="/photos/terrace_web.jpg?v=fc6b7cfe" alt="" width="1000" height="796" loading="lazy">
+        <picture><source type="image/webp" srcset="/photos/terrace-480.webp?v=694d90c9 480w, /photos/terrace-800.webp?v=516fef05 800w, /photos/terrace-1000.webp?v=1b85df49 1000w" sizes="min(30vw, 420px)"><img class="layer" data-layer="terrace" src="/photos/terrace_web.jpg?v=fc6b7cfe" alt="" width="1000" height="796" loading="lazy"></picture>
         <span class="tag" id="svc-tag" hidden>04 / Terrasser &amp; bryggor</span>
       </div>
     </div>
   </div>
+  <p class="svc-gd rv" data-i18n="svcGd">Läs mer i våra guider: <a href="/artiklar/badrumsrenovering-vasa/">badrumsrenovering i Vasa</a> · <a href="/artiklar/koksrenovering-vasa/">köksrenovering i Vasa</a> · <a href="/artiklar/spanntak-vasa/">spänntak i Vasa</a> · <a href="/artiklar/bygga-terrass-brygga-vasa/">bygga terrass</a> · <a href="/artiklar/bygga-brygga-vasa/">bygga brygga</a> · <a href="/artiklar/helrenovering-egnahemshus-vasa/">helrenovering av egnahemshus</a></p>
 </section>
 
 <section id="process" class="proc" aria-labelledby="h-process">
@@ -696,7 +703,7 @@ html.js .rv.in{opacity:1;transform:none;}
 <section id="om" class="sec wrap" aria-labelledby="h-om">
   <div class="about-grid">
     <div class="about-photo rv">
-      <img src="/photos/interior_web.jpg?v=ea3c8c39" alt="Nyrenoverat rum med grön väggfärg och trätrappa" width="1000" height="1000" loading="lazy">
+      <picture><source type="image/webp" srcset="/photos/interior-480.webp?v=e87826f0 480w, /photos/interior-800.webp?v=6ba9caa1 800w, /photos/interior-1000.webp?v=d687f727 1000w" sizes="(max-width: 920px) calc(100vw - 40px), min(45vw, 610px)"><img src="/photos/interior_web.jpg?v=ea3c8c39" alt="Nyrenoverat rum med grön väggfärg och trätrappa" width="1000" height="1000" loading="lazy"></picture>
     </div>
     <div class="about-copy">
       <span class="sec-no rv" data-i18n="abNo">Varför <span class="nm">RenovaMax</span></span>
@@ -725,15 +732,15 @@ html.js .rv.in{opacity:1;transform:none;}
   </div>
   <div class="gal-grid">
     <figure class="gal-item rv">
-      <img src="/photos/house_web.jpg?v=0943980f" alt="Helrenoverad stuga – vit fasad, nytt trädäck" width="1000" height="1000" loading="lazy">
+      <picture><source type="image/webp" srcset="/photos/house-480.webp?v=0955ff0d 480w, /photos/house-800.webp?v=1edf6632 800w, /photos/house-1000.webp?v=e3724ce7 1000w" sizes="(max-width: 820px) calc(100vw - 40px), min(55vw, 720px)"><img src="/photos/house_web.jpg?v=0943980f" alt="Helrenoverad stuga – vit fasad, nytt trädäck" width="1000" height="1000" loading="lazy"></picture>
       <figcaption class="cap"><b data-i18n="t1t">Helrenovering</b><span class="mono" data-i18n="t1s">Stuga · Golv–tak</span></figcaption>
     </figure>
     <figure class="gal-item rv d1">
-      <img src="/photos/interior_web.jpg?v=ea3c8c39" alt="Nymålat rum med trätrappa" width="1000" height="1000" loading="lazy">
+      <picture><source type="image/webp" srcset="/photos/interior-480.webp?v=e87826f0 480w, /photos/interior-800.webp?v=6ba9caa1 800w, /photos/interior-1000.webp?v=d687f727 1000w" sizes="(max-width: 820px) calc(100vw - 40px), min(40vw, 530px)"><img src="/photos/interior_web.jpg?v=ea3c8c39" alt="Nymålat rum med trätrappa" width="1000" height="1000" loading="lazy"></picture>
       <figcaption class="cap"><b data-i18n="t2t">Inomhusrenovering</b><span class="mono" data-i18n="t2s">Färgbyte · Helt rum</span></figcaption>
     </figure>
     <figure class="gal-item rv d2">
-      <img src="/photos/terrace_web.jpg?v=fc6b7cfe" alt="Terrass i trä med uteplats" width="1000" height="796" loading="lazy">
+      <picture><source type="image/webp" srcset="/photos/terrace-480.webp?v=694d90c9 480w, /photos/terrace-800.webp?v=516fef05 800w, /photos/terrace-1000.webp?v=1b85df49 1000w" sizes="(max-width: 820px) calc(100vw - 40px), min(40vw, 530px)"><img src="/photos/terrace_web.jpg?v=fc6b7cfe" alt="Terrass i trä med uteplats" width="1000" height="796" loading="lazy"></picture>
       <figcaption class="cap"><b data-i18n="t3t">Terrass &amp; uterum</b><span class="mono" data-i18n="t3s">Terrass i trä</span></figcaption>
     </figure>
   </div>
@@ -839,12 +846,13 @@ const DICT={
  fi:{
   tlLeft:"Rakennus- ja remonttityöt · Vaasa · Pohjanmaa",tlHours:"Ma–pe 7–17",
   navServices:"Palvelut",navProcess:"Näin toimimme",navAbout:"Meistä",navProjects:"Työt",navContact:"Yhteystiedot",skip:"Siirry sisältöön",navGuides:"Oppaat",navCta:"Pyydä tarjous",
-  anPlace:"Vaasa · Pohjanmaa",anDirect:"Suoraan tekijän kanssa",
-  heroTitle:'<span class="row"><span>Aika</span></span><span class="row"><span class="ghost">uudistaa</span></span><span class="row"><span>oma <span class="hem">kotisi?</span></span></span>',
+  heroH1:"Remontit Vaasassa ja Pohjanmaalla",anDirect:"Suoraan tekijän kanssa",
+  heroTitle:'<span class="row"><span>Aika</span></span> <span class="row"><span class="ghost">uudistaa</span></span> <span class="row"><span>oma <span class="hem">kotisi?</span></span></span>',
   heroSub:"Remontoimme koteja Vaasassa ja Pohjanmaalla, <b>lattiasta kattoon.</b> Keittiöt, kylpyhuoneet ja stretch-katot sekä terassit ja laiturit, jotka kestävät rannikon olosuhteet.",
   heroCapA:"Kokonaisremontti",heroCapB:"Mökki · Vaasa",
-  svcNo:"Mitä teemme",svcTitle:'Työnjälki, joka <span class="em-serif">kestää</span>',
+  svcNo:"Mitä teemme",svcTitle:'Remontit, jotka <span class="em-serif">kestävät</span>',
   svcIntro:"Neljä palvelua koteihin Vaasassa ja muualla Pohjanmaalla. Valitse sopiva ja pyydä tarjous.",
+  svcGd:'Lue lisää oppaistamme: <a href="/fi/artikkelit/kylpyhuoneremontti-vaasa/">kylpyhuoneremontti Vaasassa</a> · <a href="/fi/artikkelit/keittioremontti-vaasa/">keittiöremontti Vaasassa</a> · <a href="/fi/artikkelit/stretch-katto-vaasa/">stretch-katto Vaasassa</a> · <a href="/fi/artikkelit/terassi-laituri-vaasa/">terassin rakentaminen</a> · <a href="/fi/artikkelit/laiturin-rakentaminen-vaasa/">laiturin rakentaminen</a> · <a href="/fi/artikkelit/omakotitalon-remontti-vaasa/">omakotitalon remontti</a>',
   s1t:"Kokonaisremontti",s1d:"Koko koti uusiksi lattiasta kattoon. Pinnat kestävät vuosia.",
   s2t:"Keittiö &amp; kylpyhuone",s2d:"Tilat, joita käytät joka päivä – tiivis vedeneristys ja siisti viimeistely.",
   s3t:"Stretch-katot",s3d:"Sileät ja modernit katot, jotka asennetaan nopeasti ja lähes pölyttömästi.",
@@ -878,12 +886,13 @@ const DICT={
  en:{
   tlLeft:"Construction &amp; renovation · Vaasa · Ostrobothnia",tlHours:"Mon–Fri 07–17",
   navServices:"Services",navProcess:"Process",navAbout:"About",navProjects:"Work",navContact:"Contact",skip:"Skip to content",navGuides:"Guides",navCta:"Request a quote",
-  anPlace:"Vaasa · Ostrobothnia",anDirect:"Straight to the craftsman",
-  heroTitle:'<span class="row"><span>Time to</span></span><span class="row"><span class="ghost">renew</span></span><span class="row"><span>your <span class="hem">home?</span></span></span>',
+  heroH1:"Renovation in Vaasa · Ostrobothnia",anDirect:"Straight to the craftsman",
+  heroTitle:'<span class="row"><span>Time to</span></span> <span class="row"><span class="ghost">renew</span></span> <span class="row"><span>your <span class="hem">home?</span></span></span>',
   heroSub:"We renovate homes in Vaasa and Ostrobothnia, <b>from floor to ceiling.</b> Kitchens, bathrooms, stretch ceilings, terraces and docks, built to last on the coast.",
   heroCapA:"Full renovation",heroCapB:"Cottage · Vaasa",
-  svcNo:"What we do",svcTitle:'Craft that <span class="em-serif">lasts</span>',
+  svcNo:"What we do",svcTitle:'Renovations that <span class="em-serif">last</span>',
   svcIntro:"Four things we do for homes in Vaasa and across Ostrobothnia. Pick a service to request a quote.",
+  svcGd:'Costs, permits and the household tax deduction for each service: see <a href="#guider">our guides below</a> (in Swedish and Finnish).',
   s1t:"Full renovation",s1d:"Whole homes transformed floor to ceiling, with a finish that lasts for years.",
   s2t:"Kitchen &amp; bathroom",s2d:"Rooms used every day, built with waterproof detailing and a clean finish.",
   s3t:"Stretch ceilings",s3d:"Smooth, modern ceilings, installed quickly and almost dust-free.",
