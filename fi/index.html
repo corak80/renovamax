@@ -288,7 +288,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(244,241,234,.92);
 .svc-gd{margin-top:clamp(24px,3.5vh,40px);padding-top:18px;border-top:1px solid var(--hair);max-width:90ch;font-size:15.5px;line-height:1.7;color:var(--ink-soft);}
 .svc-gd a{color:var(--brass-dk);font-weight:600;white-space:nowrap;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
 .svc-gd a:hover{color:var(--ink);}
-.foot-link:empty{display:none;}
+.contact-foot .foot-link:empty{display:none;}
 .contact-foot .foot-link.foot-svc{flex-basis:100%;text-decoration:none;}
 .foot-svc a{text-decoration:underline;text-underline-offset:3px;}
 .foot-svc a:hover{color:var(--brass-lt);}
@@ -973,7 +973,7 @@ function setLang(lang){
   syncChrome();
   renderForm();
 }
-$$('a[data-lang]').forEach(b=>b.addEventListener('click',()=>{try{localStorage.setItem('rmx-lang',b.dataset.lang);}catch(e){} if(location.hash) b.href=b.getAttribute('href')+location.hash;}));
+$$('a[data-lang]').forEach(b=>b.addEventListener('click',()=>{try{localStorage.setItem('rmx-lang',b.dataset.lang);}catch(e){} if(location.search||location.hash) b.href=b.getAttribute('href')+location.search+location.hash;}));
 
 /* marquee per language */
 const KW={sv:["Helrenovering","Kök &amp; badrum","Spänntak","Terrasser &amp; bryggor","Golv till tak","Vasa · Österbotten"],
