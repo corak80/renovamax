@@ -288,6 +288,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(244,241,234,.92);
 .svc-gd{margin-top:clamp(24px,3.5vh,40px);padding-top:18px;border-top:1px solid var(--hair);max-width:90ch;font-size:15.5px;line-height:1.7;color:var(--ink-soft);}
 .svc-gd a{color:var(--brass-dk);font-weight:600;white-space:nowrap;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
 .svc-gd a:hover{color:var(--ink);}
+.foot-link:empty{display:none;}
+.contact-foot .foot-link.foot-svc{flex-basis:100%;text-decoration:none;}
+.foot-svc a{text-decoration:underline;text-underline-offset:3px;}
+.foot-svc a:hover{color:var(--brass-lt);}
 @media(max-width:640px){.svc-gd{line-height:1.95;}}
 @media (max-width:700px){.gd-en{grid-template-columns:40px 1fr;padding-left:4px;padding-right:4px;}.gd-langs{grid-column:2;}.gd-list a{grid-template-columns:40px 1fr auto;padding-left:4px;padding-right:4px;}}
 .svc-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,4vw,72px);align-items:start;}
@@ -643,22 +647,22 @@ html.js .rv.in{opacity:1;transform:none;}
   <p class="svc-intro rv" data-i18n="svcIntro">Fyra saker vi gör i hem i Vasa och runt om i Österbotten. Välj en tjänst och begär offert.</p>
   <div class="svc-wrap">
     <div class="svc-list rv" role="list">
-      <a class="svc-item active" href="#quoteForm" role="listitem" data-svc="1">
+      <a class="svc-item active" href="/tjanster/helrenovering-vasa/" role="listitem" data-svc="1">
         <span class="no">01</span><h3 data-i18n="s1t">Helrenovering</h3>
         <span class="arr" aria-hidden="true">→</span>
         <p data-i18n="s1d">Hela hem förvandlade från golv till tak, med ytor som håller i åratal.</p>
       </a>
-      <a class="svc-item" href="#quoteForm" role="listitem" data-svc="2">
+      <a class="svc-item" href="/tjanster/badrumsrenovering-vasa/" role="listitem" data-svc="2">
         <span class="no">02</span><h3 data-i18n="s2t">Kök &amp; badrum</h3>
         <span class="arr" aria-hidden="true">→</span>
         <p data-i18n="s2d">Rum som används varje dag, byggda med vattentäta detaljer och ren finish.</p>
       </a>
-      <a class="svc-item" href="#quoteForm" role="listitem" data-svc="3">
+      <a class="svc-item" href="/tjanster/spanntak-vasa/" role="listitem" data-svc="3">
         <span class="no">03</span><h3 data-i18n="s3t">Spänntak</h3>
         <span class="arr" aria-hidden="true">→</span>
         <p data-i18n="s3d">Släta, moderna innertak som monteras snabbt och nästan dammfritt.</p>
       </a>
-      <a class="svc-item" href="#quoteForm" role="listitem" data-svc="4" data-photo="terrace">
+      <a class="svc-item" href="/tjanster/terrass-och-brygga-vasa/" role="listitem" data-svc="4" data-photo="terrace">
         <span class="no">04</span><h3 data-i18n="s4t">Terrasser &amp; bryggor</h3>
         <span class="arr" aria-hidden="true">→</span>
         <p data-i18n="s4d">Uterum och bryggor i trä som tål den österbottniska kusten.</p>
@@ -825,6 +829,7 @@ html.js .rv.in{opacity:1;transform:none;}
       <span class="mono">© <span id="yr">2026</span> <span class="nm">RenovaMax</span> · <span data-i18n="ftRights">Bygg &amp; renovering · Vasa</span></span>
       <span class="mono foot-link" data-i18n="ftGuides"><a href="/artiklar/">Guider</a></span>
       <a class="mono foot-link" href="/integritetspolicy.html" data-i18n="ftPrivacy">Integritetspolicy</a>
+      <span class="mono foot-link foot-svc" data-i18n="ftSvc">Tjänster: <a href="/tjanster/badrumsrenovering-vasa/">Badrumsrenovering</a> · <a href="/tjanster/koksrenovering-vasa/">Köksrenovering</a> · <a href="/tjanster/spanntak-vasa/">Spänntak</a> · <a href="/tjanster/terrass-och-brygga-vasa/">Terrasser och bryggor</a> · <a href="/tjanster/helrenovering-vasa/">Helrenovering</a></span>
     </div>
   </div>
 </section>
@@ -879,7 +884,7 @@ const DICT={
   fNoJs:"Lomake vaatii JavaScriptin. Soita 046 811 0888 tai lähetä sähköpostia osoitteeseen maximtim@hotmail.com.",
   fNote:'Viestisi menee suoraan Maximille. Käytämme tietojasi vain vastataksemme sinulle, ks. <a href="/integritetspolicy.html">tietosuojaseloste</a>.',
   ftAddr:"Asemakatu 17 A2 (Stationsgatan 17 A2) · 65100 Vaasa",
-  ftRights:"Rakennus- ja remonttityöt · Vaasa",ftBid:"Y-tunnus 3540458-2",ftPrivacy:"Tietosuojaseloste",ftGuides:'<a href="/fi/artikkelit/">Oppaat</a>',
+  ftRights:"Rakennus- ja remonttityöt · Vaasa",ftBid:"Y-tunnus 3540458-2",ftPrivacy:"Tietosuojaseloste",ftGuides:'<a href="/fi/artikkelit/">Oppaat</a>',ftSvc:"Palvelut: <a href=\"/fi/palvelut/kylpyhuoneremontti-vaasa/\">Kylpyhuoneremontti</a> · <a href=\"/fi/palvelut/keittioremontti-vaasa/\">Keittiöremontti</a> · <a href=\"/fi/palvelut/stretch-katto-vaasa/\">Stretch-katot</a> · <a href=\"/fi/palvelut/terassit-ja-laiturit-vaasa/\">Terassit ja laiturit</a> · <a href=\"/fi/palvelut/kokonaisremontti-vaasa/\">Kokonaisremontti</a>",
   gdNo:"Oppaat",gdTitle:'Ennen kuin <span class="em-serif">remontoit</span>',gdIntro:"Käytännön oppaita remontoijalle Vaasassa ja Pohjanmaalla: remonttien hinnat, aikataulut, luvat ja kotitalousvähennys.",gdList:"<li><a href=\"/fi/artikkelit/kotitalousvahennys-remontti/\"><span class=\"no\">01</span><span class=\"gd-t\">Kotitalousvähennys 2026 remontista: paljonko saat ja miten haet</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/omakotitalon-remontti-vaasa/\"><span class=\"no\">02</span><span class=\"gd-t\">Omakotitalon remontti Vaasassa – työjärjestys, luvat ja hinta</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/pintaremontti-vaasa/\"><span class=\"no\">03</span><span class=\"gd-t\">Pintaremontti – hinta, työjärjestys ja säännöt Vaasassa</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/muutostyoilmoitus-taloyhtiolle/\"><span class=\"no\">04</span><span class=\"gd-t\">Muutostyöilmoitus taloyhtiölle – milloin, miten ja paljonko se maksaa</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/kosteusvaurio-vaasa/\"><span class=\"no\">05</span><span class=\"gd-t\">Kosteusvaurio kotona – merkit, ensitoimet, vastuu ja korjaus Vaasassa</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/kylpyhuoneremontti-vaasa/\"><span class=\"no\">06</span><span class=\"gd-t\">Kylpyhuoneremontti Vaasassa: hinta, kesto ja työvaiheet</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/keittioremontti-vaasa/\"><span class=\"no\">07</span><span class=\"gd-t\">Keittiöremontti Vaasassa – hinta, suunnittelu ja taloyhtiön säännöt</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/saunaremontti-vaasa/\"><span class=\"no\">08</span><span class=\"gd-t\">Saunaremontti Vaasassa – hinta, kesto ja missä ei kannata oikaista</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/lattiaremontti-vaasa/\"><span class=\"no\">09</span><span class=\"gd-t\">Lattiaremontti Vaasassa – hinta, materiaalit ja kesto</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/stretch-katto-vaasa/\"><span class=\"no\">10</span><span class=\"gd-t\">Stretch-katto Vaasassa – näin se asennetaan ja mistä hinta muodostuu</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/terassi-laituri-vaasa/\"><span class=\"no\">11</span><span class=\"gd-t\">Terassin rakentaminen Vaasassa – tarvitaanko lupa terassille tai laiturille?</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li><li><a href=\"/fi/artikkelit/laiturin-rakentaminen-vaasa/\"><span class=\"no\">12</span><span class=\"gd-t\">Laiturin rakentaminen Pohjanmaalla – laiturityypit, jäät, maankohoaminen ja hinta</span><span class=\"arr\" aria-hidden=\"true\">→</span></a></li>",gdAll:'<a href="/fi/artikkelit/">Kaikki oppaat →</a>',
   mbCall:"Soita"
  },
@@ -919,7 +924,7 @@ const DICT={
   fNoJs:"The form needs JavaScript. Call 046 811 0888 or email maximtim@hotmail.com.",
   fNote:'Goes straight to Maxim. We use your details only to reply to you, see the <a href="/integritetspolicy.html">privacy policy</a>.',
   ftAddr:"Stationsgatan 17 A2 · 65100 Vaasa",
-  ftRights:"Construction &amp; renovation · Vaasa",ftBid:"Business ID 3540458-2",ftPrivacy:"Privacy policy",ftGuides:'<a href="/artiklar/">Guides</a>',
+  ftRights:"Construction &amp; renovation · Vaasa",ftBid:"Business ID 3540458-2",ftPrivacy:"Privacy policy",ftGuides:'<a href="/artiklar/">Guides</a>',ftSvc:"",
   gdNo:"Guides",gdTitle:'Before you <span class="em-serif">renovate</span>',gdIntro:"Practical guides on costs, timelines, permits and the Finnish household tax deduction, written in Swedish and Finnish. Choose your language:",gdList:"<li><div class=\"gd-en\"><span class=\"no\">01</span><span class=\"gd-t\">Household tax deduction for renovation work</span><span class=\"gd-langs\"><a href=\"/artiklar/hushallsavdrag-renovering/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/kotitalousvahennys-remontti/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">02</span><span class=\"gd-t\">Renovating a detached house</span><span class=\"gd-langs\"><a href=\"/artiklar/helrenovering-egnahemshus-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/omakotitalon-remontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">03</span><span class=\"gd-t\">Surface renovation: painting, wallpaper and floors</span><span class=\"gd-langs\"><a href=\"/artiklar/ytrenovering-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/pintaremontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">04</span><span class=\"gd-t\">Renovating a flat: notifying the housing company</span><span class=\"gd-langs\"><a href=\"/artiklar/anmalan-om-andringsarbete-husbolag/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/muutostyoilmoitus-taloyhtiolle/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">05</span><span class=\"gd-t\">Moisture damage: signs, responsibility and repair</span><span class=\"gd-langs\"><a href=\"/artiklar/fuktskada-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/kosteusvaurio-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">06</span><span class=\"gd-t\">Bathroom renovation in Vaasa</span><span class=\"gd-langs\"><a href=\"/artiklar/badrumsrenovering-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/kylpyhuoneremontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">07</span><span class=\"gd-t\">Kitchen renovation in Vaasa</span><span class=\"gd-langs\"><a href=\"/artiklar/koksrenovering-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/keittioremontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">08</span><span class=\"gd-t\">Sauna renovation</span><span class=\"gd-langs\"><a href=\"/artiklar/renovera-bastu-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/saunaremontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">09</span><span class=\"gd-t\">Floor renovation</span><span class=\"gd-langs\"><a href=\"/artiklar/byta-golv-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/lattiaremontti-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">10</span><span class=\"gd-t\">Stretch ceilings</span><span class=\"gd-langs\"><a href=\"/artiklar/spanntak-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/stretch-katto-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">11</span><span class=\"gd-t\">Terraces and piers: do you need a permit?</span><span class=\"gd-langs\"><a href=\"/artiklar/bygga-terrass-brygga-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/terassi-laituri-vaasa/\" hreflang=\"fi\">FI</a></span></div></li><li><div class=\"gd-en\"><span class=\"no\">12</span><span class=\"gd-t\">Building a pier: types, ice and land uplift</span><span class=\"gd-langs\"><a href=\"/artiklar/bygga-brygga-vasa/\" hreflang=\"sv\">SV</a> <a href=\"/fi/artikkelit/laiturin-rakentaminen-vaasa/\" hreflang=\"fi\">FI</a></span></div></li>",gdAll:'<a href="/artiklar/">Guides in Swedish →</a> · <a href="/fi/artikkelit/">in Finnish →</a>',
   mbCall:"Call"
  }
@@ -1047,6 +1052,10 @@ items.forEach(it=>{
     if(sel&&document.body.contains(sel)){sel.selectedIndex=+it.dataset.svc;sel.dispatchEvent(new Event('change'));}
   });
 });
+/* ?tjanst=<id> from a service page preselects that service in the quote form */
+(function(){try{const M={hel:'s1t',badrum:'s2t',kok:'s2t',spanntak:'s3t',terrass:'s4t'},v=new URLSearchParams(location.search).get('tjanst');
+  const k=Object.prototype.hasOwnProperty.call(M,v)?M[v]:null;  /* never a prototype key like ?tjanst=constructor */
+  const o=k&&sel&&sel.querySelector('option[data-i18n="'+k+'"]'); if(o){o.selected=true;sel.dispatchEvent(new Event('change'));}}catch(e){}})();
 
 /* year */
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -1111,7 +1120,7 @@ form.addEventListener('submit',async e=>{
 /* init */
 /* each language is a static page (/ · /fi/ · /en/); a returning visitor who chose FI/EN lands on it */
 (function(){const URLS={sv:'/',fi:'/fi/',en:'/en/'};let pref=null;try{pref=localStorage.getItem('rmx-lang');}catch(e){}
-  if(curLang()==='sv'&&location.pathname==='/'&&pref&&pref!=='sv'&&URLS[pref]){location.replace(URLS[pref]+location.hash);return;}
+  if(curLang()==='sv'&&location.pathname==='/'&&pref&&pref!=='sv'&&URLS[pref]){location.replace(URLS[pref]+location.search+location.hash);return;}
   syncSvc(); syncChrome();})();
 </script>
 </body>
