@@ -32,6 +32,7 @@
   "@id": "https://renovamax.fi/#business",
   "name": "RenovaMax",
   "url": "https://renovamax.fi/",
+  "logo": { "@type": "ImageObject", "url": "https://renovamax.fi/logo.png", "width": 320, "height": 314 },
   "image": "https://renovamax.fi/photos/house_web.jpg?v=0943980f",
   "description": "Helrenovering, kök & badrum, spänntak, terrasser & bryggor i Vasa med omnejd.",
   "telephone": "+358468110888",
@@ -802,11 +803,11 @@ html.js .rv.in{opacity:1;transform:none;}
       <div class="qgrid">
         <div class="qfield">
           <label for="qname" data-i18n="fName">Name</label>
-          <input id="qname" name="name" type="text" autocomplete="name" maxlength="120" required>
+          <input id="qname" name="name" type="text" autocomplete="name" maxlength="120" enterkeyhint="next" required>
         </div>
         <div class="qfield">
           <label for="qphone" data-i18n="fPhone">Phone</label>
-          <input id="qphone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="32" pattern="\+?[0-9 \(\)\-]{6,}" required>
+          <input id="qphone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="32" pattern="\+?[0-9 \(\)\-]{6,}" enterkeyhint="next" required>
         </div>
         <div class="qfield full">
           <label for="qservice" data-i18n="fService">Service</label>
@@ -1084,6 +1085,14 @@ function checkPhone(){
   phone.setCustomValidity(v===''||phoneOk(v)?'':T().phone);
 }
 if(phone){phone.addEventListener('input',checkPhone);phone.addEventListener('invalid',checkPhone);}
+/* phone keyboards label Enter "Next" on name/phone: make it move on instead of submitting a half-filled form */
+form.addEventListener('keydown',e=>{
+  const el=e.target;
+  if(e.key!=='Enter'||e.isComposing||el.getAttribute('enterkeyhint')!=='next') return;
+  e.preventDefault();
+  const order=['qname','qphone','qservice','qmsg'], n=$('#'+order[order.indexOf(el.id)+1]);
+  if(n) n.focus();
+});
 
 function renderForm(){
   const t=T();
