@@ -90,7 +90,7 @@ footer a{color:var(--brass-lt)}
 
 <main class="wrap" id="main">
 <h1 data-i18n="h1">Integritetspolicy</h1>
-<div class="updated"><span data-i18n="updatedLbl">Uppdaterad</span> 02.10.2026</div>
+<div class="updated"><span data-i18n="updatedLbl">Uppdaterad</span> 09.11.2026</div>
 
 <div class="card">
   <p data-i18n="tldr"><b>Kort sagt:</b> den här webbplatsen använder <span class="em">inga kakor</span>, ingen analys och inga spårare. Vi samlar bara in det du själv skriver i offertformuläret, och använder det enbart för att svara dig.</p>
@@ -121,10 +121,11 @@ footer a{color:var(--brass-lt)}
   <tr><td>GitHub, Inc. (Microsoft)</td><td data-i18n="w2">Webbhotell för de statiska sidorna</td></tr>
   <tr><td>Hetzner Online GmbH</td><td data-i18n="w3">Servern som tar emot formuläret och vidarebefordrar det som e-post</td></tr>
   <tr><td>Eläinklinikka Saari</td><td data-i18n="w4">Driver den servern tekniskt åt oss</td></tr>
-  <tr><td>Google Ireland Ltd.</td><td data-i18n="w5">Skickar e-postmeddelandet</td></tr>
+  <tr><td>Resend, Inc.</td><td data-i18n="w5">Skickar e-postmeddelandet</td></tr>
+  <tr><td>Google Ireland Ltd.</td><td data-i18n="w5b">Skickar e-postmeddelandet om Resend inte fungerar</td></tr>
   <tr><td>Microsoft Corporation</td><td data-i18n="w6">E-postlådan där förfrågan tas emot och läses</td></tr>
 </table>
-<p data-i18n="whoTransfer"><b>Överföring utanför EU/EES:</b> servern som tar emot formuläret står i Helsingfors, Finland. Några av de andra tjänsterna (Cloudflare, GitHub, Google och Microsoft) kan dock behandla uppgifter på servrar i USA. Överföringarna sker med stöd av EU-kommissionens standardavtalsklausuler och/eller EU–US Data Privacy Framework.</p>
+<p data-i18n="whoTransfer"><b>Överföring utanför EU/EES:</b> servern som tar emot formuläret står i Helsingfors, Finland. Några av de andra tjänsterna (Cloudflare, GitHub, Resend, Google och Microsoft) kan dock behandla uppgifter på servrar i USA. Överföringarna sker med stöd av EU-kommissionens standardavtalsklausuler och/eller EU–US Data Privacy Framework.</p>
 
 <h2 data-i18n="h2keep">5. Hur länge vi sparar uppgifterna</h2>
 <ul>
@@ -188,8 +189,9 @@ const DICT={
   w3:"Palvelin, joka vastaanottaa lomakkeen ja välittää sen sähköpostina",
   w4:"Ylläpitää tätä palvelinta teknisesti puolestamme",
   w5:"Lähettää sähköpostiviestin",
+  w5b:"Lähettää sähköpostiviestin, jos Resend ei toimi",
   w6:"Sähköpostilaatikko, jossa kysely vastaanotetaan ja luetaan",
-  whoTransfer:"<b>Siirto EU:n/ETA:n ulkopuolelle:</b> lomakkeen vastaanottava palvelin sijaitsee Helsingissä. Osa muista palveluista (Cloudflare, GitHub, Google ja Microsoft) voi kuitenkin käsitellä tietoja Yhdysvalloissa sijaitsevilla palvelimilla. Siirrot perustuvat EU:n komission vakiosopimuslausekkeisiin ja/tai EU–US Data Privacy Frameworkiin.",
+  whoTransfer:"<b>Siirto EU:n/ETA:n ulkopuolelle:</b> lomakkeen vastaanottava palvelin sijaitsee Helsingissä. Osa muista palveluista (Cloudflare, GitHub, Resend, Google ja Microsoft) voi kuitenkin käsitellä tietoja Yhdysvalloissa sijaitsevilla palvelimilla. Siirrot perustuvat EU:n komission vakiosopimuslausekkeisiin ja/tai EU–US Data Privacy Frameworkiin.",
   h2keep:"5. Kuinka kauan säilytämme tietoja",
   k1:"<b>Kyselysi:</b> säilyy sähköpostina postilaatikossamme niin kauan kuin asia on kesken ja asiakassuhteen edellyttämän ajan. Jos työtä ei synny, poistamme viestin kun on selvää, ettei asia etene.",
   k2:"<b>Palvelinlokit:</b> poistuvat automaattisesti 14 vuorokauden kuluttua.",
@@ -235,8 +237,9 @@ const DICT={
   w3:"The server that receives the form and relays it as email",
   w4:"Operates that server technically on our behalf",
   w5:"Sends the email message",
+  w5b:"Sends the email message if Resend is unavailable",
   w6:"The mailbox where the enquiry is received and read",
-  whoTransfer:"<b>Transfers outside the EU/EEA:</b> the server that receives the form is located in Helsinki, Finland. Some of the other services (Cloudflare, GitHub, Google and Microsoft) may, however, process data on servers in the United States. Transfers rely on the European Commission's Standard Contractual Clauses and/or the EU–US Data Privacy Framework.",
+  whoTransfer:"<b>Transfers outside the EU/EEA:</b> the server that receives the form is located in Helsinki, Finland. Some of the other services (Cloudflare, GitHub, Resend, Google and Microsoft) may, however, process data on servers in the United States. Transfers rely on the European Commission's Standard Contractual Clauses and/or the EU–US Data Privacy Framework.",
   h2keep:"5. How long we keep the data",
   k1:"<b>Your enquiry:</b> kept as email in our inbox while the matter is open and for as long as the customer relationship requires. If no work comes of it, we delete the message once it is clear the matter will not proceed.",
   k2:"<b>Server logs:</b> deleted automatically after 14 days.",
