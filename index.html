@@ -812,7 +812,11 @@ html.js .rv.in{opacity:1;transform:none;}
           <label for="qphone" data-i18n="fPhone">Telefon</label>
           <input id="qphone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="32" pattern="\+?[0-9 \(\)\-]{6,}" enterkeyhint="next" required>
         </div>
-        <div class="qfield full">
+        <div class="qfield">
+          <label for="qemail" data-i18n="fEmail">E-post (frivilligt)</label>
+          <input id="qemail" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" enterkeyhint="next">
+        </div>
+        <div class="qfield">
           <label for="qservice" data-i18n="fService">Tjänst</label>
           <select id="qservice" name="service" required>
             <option value="" disabled selected data-i18n="fSvcPh">Välj tjänst…</option>
@@ -893,7 +897,7 @@ const DICT={
   pjNote:"Otos töistämme Vaasassa ja lähialueilla",pjIg:"@renovamax_ · lisää töitä Instagramissa",
   coNo:"Yhteystiedot",coTitle:'Joko <span class="em-serif">aloitetaan?</span>',
   coSms:"Lähetä viesti →",coEmailL:"Sähköposti",
-  fHead:"Tai jätä tarjouspyyntö suoraan",fName:"Nimi",fPhone:"Puhelin",fService:"Palvelu",fSvcPh:"Valitse palvelu…",fOther:"Muu",
+  fHead:"Tai jätä tarjouspyyntö suoraan",fName:"Nimi",fPhone:"Puhelin",fEmail:"Sähköposti (vapaaehtoinen)",fService:"Palvelu",fSvcPh:"Valitse palvelu…",fOther:"Muu",
   fMsg:"Viesti",fMsgPh:"Kerro lyhyesti kohteesta ja toiveistasi…",fSend:"Lähetä tarjouspyyntö",
   fNoJs:"Lomake vaatii JavaScriptin. Soita 046 811 0888 tai lähetä sähköpostia osoitteeseen maximtim@hotmail.com.",
   fNote:'Viestisi menee suoraan Maximille. Käytämme tietojasi vain vastataksemme sinulle, ks. <a href="/integritetspolicy.html">tietosuojaseloste</a>.',
@@ -935,7 +939,7 @@ const DICT={
   pjNote:"A selection of what we build in and around Vaasa",pjIg:"@renovamax_ · more projects on Instagram",
   coNo:"Contact",coTitle:'Ready to <span class="em-serif">start?</span>',
   coSms:"Send a message →",coEmailL:"Email",
-  fHead:"Or send a request directly",fName:"Name",fPhone:"Phone",fService:"Service",fSvcPh:"Choose a service…",fOther:"Other",
+  fHead:"Or send a request directly",fName:"Name",fPhone:"Phone",fEmail:"Email (optional)",fService:"Service",fSvcPh:"Choose a service…",fOther:"Other",
   fMsg:"Message",fMsgPh:"Tell us briefly about your project…",fSend:"Send request",
   fNoJs:"The form needs JavaScript. Call 046 811 0888 or email maximtim@hotmail.com.",
   fNote:'Goes straight to Maxim. We use your details only to reply to you, see the <a href="/integritetspolicy.html">privacy policy</a>.',
@@ -1093,7 +1097,7 @@ form.addEventListener('keydown',e=>{
   const el=e.target;
   if(e.key!=='Enter'||e.isComposing||el.getAttribute('enterkeyhint')!=='next') return;
   e.preventDefault();
-  const order=['qname','qphone','qservice','qmsg'], n=$('#'+order[order.indexOf(el.id)+1]);
+  const order=['qname','qphone','qemail','qservice','qmsg'], n=$('#'+order[order.indexOf(el.id)+1]);
   if(n) n.focus();
 });
 
@@ -1122,7 +1126,7 @@ form.addEventListener('submit',async e=>{
   formState=null;renderForm();
   try{
     const r=await fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:f.name.value,phone:f.phone.value,service:f.service.value,
+      body:JSON.stringify({name:f.name.value,phone:f.phone.value,email:f.email.value,service:f.service.value,
                            msg:f.msg.value,lang,rmx_ref:f.rmx_ref.value})});
     if(!r.ok) throw new Error('http '+r.status);
     try{localStorage.setItem('rmx-lead-ts',String(Date.now()));}catch(_){}
